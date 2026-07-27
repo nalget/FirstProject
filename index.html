@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Battery LED · 可自定义充电指示灯</title>
+  <meta name="description" content="把苹果充电指示灯做成可自定义灯效的网页工具：自定义颜色、动画、光晕，并支持读取真实设备电量。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='%23ff9f0a'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo"></span>
+      <div class="brand-text">
+        <h1>Apple Battery LED</h1>
+        <p>可自定义充电指示灯 · Customizable Charge Indicator</p>
+      </div>
+    </div>
+    <a class="gh" href="https://github.com/your-username/apple-battery-led" target="_blank" rel="noopener">GitHub ★</a>
+  </header>
+
+  <main class="app">
+    <section class="stage" id="stage"><!-- LED injected by led.js --></section>
+
+    <aside class="panel">
+      <h2>灯效控制台</h2>
+
+      <label class="field">
+        <span>预设 Preset</span>
+        <select id="preset">
+          <option value="">— 自定义 —</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>信号源 Source</span>
+        <select id="useRealBattery">
+          <option value="false">手动 Manual</option>
+          <option value="true">实时电量 Live Battery</option>
+        </select>
+      </label>
+
+      <label class="field" id="manualStateWrap">
+        <span>状态 State</span>
+        <select id="state">
+          <option value="charging">充电中 Charging</option>
+          <option value="full">已充满 Full</option>
+          <option value="low">低电量 Low</option>
+          <option value="off">熄灭 Off</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>动画模式 Animation</span>
+        <select id="mode">
+          <option value="breathing">呼吸 Breathing</option>
+          <option value="pulse">脉冲 Pulse</option>
+          <option value="ripple">涟漪 Ripple</option>
+          <option value="solid">常亮 Solid</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>尺寸 Size <em id="sizeVal">140px</em></span>
+        <input type="range" id="size" min="40" max="320" step="2" value="140" />
+      </label>
+
+      <label class="field">
+        <span>速度 Speed <em id="speedVal">1.6x</em></span>
+        <input type="range" id="speed" min="0.3" max="6" step="0.1" value="1.6" />
+      </label>
+
+      <label class="field">
+        <span>光晕 Glow <em id="glowVal">85%</em></span>
+        <input type="range" id="glow" min="0" max="1" step="0.01" value="0.85" />
+      </label>
+
+      <label class="field">
+        <span>亮度 Brightness <em id="brightnessVal">100%</em></span>
+        <input type="range" id="brightness" min="0.3" max="1.5" step="0.01" value="1" />
+      </label>
+
+      <div class="colors">
+        <label class="field">
+          <span>充电色</span>
+          <input type="color" id="chargingColor" value="#ff9f0a" />
+        </label>
+        <label class="field">
+          <span>满电色</span>
+          <input type="color" id="fullColor" value="#34c759" />
+        </label>
+        <label class="field">
+          <span>低电色</span>
+          <input type="color" id="lowColor" value="#ff3b30" />
+        </label>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="deviceMock" />
+        <span>设备外壳 Device shell（凹面端口质感）</span>
+      </label>
+
+      <div class="row">
+        <button id="randomBtn">随机 Random</button>
+        <button id="shareBtn">分享链接 Share</button>
+      </div>
+      <p class="hint" id="shareHint"></p>
+    </aside>
+  </main>
+
+  <script src="js/state.js"></script>
+  <script src="js/led.js"></script>
+  <script src="js/battery.js"></script>
+  <script src="js/controls.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

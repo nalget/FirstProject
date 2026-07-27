@@ -1,0 +1,32 @@
+{
+  "name": "apple-battery-led",
+  "version": "1.0.0",
+  "description": "把苹果充电指示灯做成一个可自定义灯效的网页工具 / A customizable web-based recreation of Apple's battery charge indicator LED.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "bin": {
+    "apple-battery-led": "server.js"
+  },
+  "keywords": [
+    "apple",
+    "battery",
+    "led",
+    "charge-indicator",
+    "light-effect",
+    "magsafe",
+    "css",
+    "vanilla-js"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/apple-battery-led.git"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
