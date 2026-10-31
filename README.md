@@ -83,4 +83,4 @@ apple-battery-led/
 
 ## 📄 许可证
 
-[MIT](LICENSE) © 2026 Your Name
+[MIT](LICENSE) © 2026 nalget
